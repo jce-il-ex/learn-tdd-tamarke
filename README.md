@@ -51,7 +51,7 @@ npm install mocha -g --save-dev
 Alterntively, you can install mocha just locally for this tutorial, by:
 
 ```sh
-npm install
+npm install mocha
 ```
 
 You should see some output *confirming* it *installed*:
