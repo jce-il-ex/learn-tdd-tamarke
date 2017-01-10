@@ -23,15 +23,16 @@ C.getChange = function (totalPayable, cashPaid) {
     'use strict';
     var change = [];
     var length = C.coins.length;
-    var remaining = cashPaid - totalPayable;          // we reduce this below
+    var remaining = cashPaid - totalPayable;	// we reduce this below
+	var j,i,coin,times;
 
-    for (var i = 0; i < length; i++) { // loop through array of notes & coins:
-        var coin = C.coins[i];
+    for (i = 0; i < length; i++) { // loop through array of notes & coins:
+        coin = C.coins[i];
 
         if(remaining/coin >= 1) { // check coin fits into the remaining amount
-            var times = Math.floor(remaining/coin);        // no partial coins
+              times = Math.floor(remaining/coin);        // no partial coins
 
-            for(var j = 0; j < times; j++) {     // add coin to change x times
+            for(j = 0; j < times; j++) {     // add coin to change x times
                 change.push(coin);
                 remaining = remaining - coin;  // subtract coin from remaining
             }
